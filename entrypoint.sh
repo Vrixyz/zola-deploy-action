@@ -62,10 +62,10 @@ main() {
 
     # needed or else we get 'doubious ...' error
     echo "Set safe directories"
-    git config --global --add safe.directory /github/workspace
-    git config --global --add safe.directory /github/workspace/sass/**/*
-    git config --global --add safe.directory /github/workspace/themes/**
-
+    git config --global --add safe.directory /github/$BUILD_DIR/workspace
+    git config --global --add safe.directory /github/$BUILD_DIR/git config --global --add safe.directory /github/workspace/website/themes/zola-hallosass/**/*
+    git config --global --add safe.directory /github/$BUILD_DIR/themes/*
+    
     if ${BUILD_THEMES}; then
         echo "Fetching themes"
         git submodule update --init --recursive
